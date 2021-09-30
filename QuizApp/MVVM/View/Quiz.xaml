@@ -1,0 +1,63 @@
+﻿<Page x:Class="QuizApp.Quiz"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuizApp"
+        mc:Ignorable="d"
+        Background="#272537"
+        Loaded="Page_Loaded"
+        SizeChanged="Resize"
+        Title="Quiz App" d:DesignWidth="850" d:DesignHeight="550">
+    <Grid Name="container">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.9*"/>
+            <RowDefinition Height="5.4*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.65*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="7.55*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" CornerRadius="100" Background="White"/>
+            <TextBlock Name="username" Grid.Column="3" Text="{Binding Username}" Foreground="White" VerticalAlignment="Center" FontSize="18"/>
+            <TextBlock Name="points" Grid.Column="4" Text="{Binding Points}" Foreground="#168050" FontSize="18" VerticalAlignment="Center" FontWeight="Medium"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8.5*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="timeLeft" Text="{Binding Question.TimeLeft}" FontSize="18" FontWeight="Medium" Foreground="#1c50c9" HorizontalAlignment="Right"></TextBlock>
+        </Grid>
+        <TextBlock Name="question" Text="{Binding Question.TheQuestion}" Grid.Row="3" HorizontalAlignment="Center" Foreground="White"></TextBlock>
+        <Label Grid.Row="4" Background="White"/>
+        <Grid Name="choices" Grid.Row="6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="3.5*"/>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="4.1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="3.1*"/>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="3.1*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="choiceA" Grid.Row="0" Grid.Column="1" Content="{Binding Question.ChoiceA}" FontWeight="DemiBold"  Background="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Name="choiceB" Grid.Row="0" Grid.Column="3" Content="{Binding Question.ChoiceB}" FontWeight="DemiBold" Background="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Name="choiceC" Grid.Row="2" Grid.Column="1" Content="{Binding Question.ChoiceC}" FontWeight="DemiBold" Background="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Name="choiceD" Grid.Row="2" Grid.Column="3" Content="{Binding Question.ChoiceD}" FontWeight="DemiBold" Background="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Page>
