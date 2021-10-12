@@ -15,8 +15,6 @@ namespace QuizApp.Core
 
             int randomCategory = categories[new Random().Next(categories.Length)];
 
-            System.Windows.MessageBox.Show(randomCategory.ToString());
-
             string apiURL = $"https://opentdb.com/api.php?amount=1&category={randomCategory.ToString()}&difficulty=easy&type=multiple";
             
             WebRequest request = WebRequest.Create(apiURL);
